@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #a2d1f0);
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      color: #23414a;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    #gift {
+      width: 150px;
+      margin-top: 40px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #gift:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    #message {
+      font-size: 1.5em;
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 50px;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-120vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉happy birth day! 🎂</h1>
+  <p>04-06-2025 aku harap dihari ulang tahunmu yang akan datang masih ada aku yang ikut berbahagia dan merayakan, pencet foto dibawah </p>
+
+  <img src="jvr.png" alt="Kado" id="gift" onclick="revealMessage()" />
+
+  <p id="message">🎈 semoga diberi umur yang panjang, umur yang berkah, patuh sama kedua orang tua, jadi contoh yang baik buat adek2, jadi orang yang bermanfaat bagi orang lain dan tidak mengecewakan, jangan sering-sering ngevape jarang jarang aja yaa 🎈, oiya maaff kadonya masih aku bawa aku masii ujian belum bisa nganter maaf iyaa nunggu ujian selesai</p>
+ <audio autoplay loop>
+    <source src="The 1975 - About You (Official).mp3" type="audio/mpeg">
+    Musik tidak tersedia.
+  </audio>
+
+  <script>
+    function revealMessage() {
+      document.getElementById("message").style.opacity = 1;
+    }
+
+    // Tambah balon acak
+    for (let i = 0; i < 20; i++) {
+      const balloon = document.createElement("img");
+      balloon.src = "jvr2.jpg";
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.animationDuration = (8 + Math.random() * 5) + "s";
+      document.body.appendChild(balloon);
+    }
+  </script>
+<a href="index.html" class="back-btn">← Kembali ke Halaman Ucapan</a>
+</body>
+</html>
